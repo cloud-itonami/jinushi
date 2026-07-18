@@ -1,0 +1,5 @@
+{:paths ["src" "test"]
+ :deps {cheshire/cheshire {:mvn/version "5.13.0"}
+        com-junkawasaki/multiformats-clj
+        {:git/url "https://github.com/com-junkawasaki/multiformats-clj"
+         :git/sha "310724803db65840f00d2d98d7887f2b6a512bd3"}}}

@@ -1,0 +1,2 @@
+{:tasks {test (shell "clojure -M -m jinushi.test-runner")
+         audit (load-file "scripts/audit.clj")}}
