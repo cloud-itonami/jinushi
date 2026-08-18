@@ -12,7 +12,7 @@
   operators are organizations (Marriott, transit, retailers); no natural persons. ODbL — store
   attribution; G1: no person dimension, no precise dwelling pin beyond the public building tag."
   (:require [clojure.string :as str]
-            #?(:clj [cheshire.core :as json])
+            [json.compat :as json]
             [jinushi.methods.datom-emit :as de]
             #?(:clj [clojure.java.io :as io])))
 

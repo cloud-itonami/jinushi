@@ -18,7 +18,7 @@
   Owner legal-entity vs natural-person is a heuristic over the free-text PLUTO ownername (no LEI/
   QID in PLUTO); the heuristic is disclosed, not asserted as fact (G2)."
   (:require [clojure.string :as str]
-            #?(:clj [cheshire.core :as json])
+            [json.compat :as json]
             [jinushi.methods.analyze :as analyze]
             #?(:clj [clojure.java.io :as io])))
 

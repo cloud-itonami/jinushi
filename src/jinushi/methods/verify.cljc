@@ -9,7 +9,7 @@
   (:require [clojure.string :as str]
             [jinushi.methods.cid :as cid]
             #?(:clj [clojure.java.io :as io])
-            #?(:clj [cheshire.core :as json])))
+            [json.compat :as json]))
 
 #?(:clj
    (defn sha256-hex-file [f]
