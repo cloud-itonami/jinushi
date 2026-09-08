@@ -1,6 +1,6 @@
 (ns jinushi.methods.test-scale-ingest
   "jinushi 地主 — production-scale streaming ingest tests."
-  (:require [clojure.test :refer [deftest is run-tests]]
+  (:require [kotoba.lang.text] [clojure.test :refer [deftest is run-tests]]
             [clojure.java.io :as io]
             [jinushi.methods.scale-ingest :as si]
             [jinushi.methods.dvf-values :as dvf]))
@@ -37,7 +37,7 @@
   (let [p (si/pluto-row->owner {:ownername "SMITH, JOHN" :numfloors "2"})]
     (is (= :natural-person (:type p)))
     (is (nil? (:name p)) "person name dropped (only sha256 key)")
-    (is (clojure.string/starts-with? (:key p) "np."))))
+    (is (kotoba.lang.text/starts-with? (:key p) "np."))))
 
 (when (= *file* (System/getProperty "babashka.file"))
   (let [{:keys [fail error]} (run-tests 'jinushi.methods.test-scale-ingest)]

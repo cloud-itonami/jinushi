@@ -20,7 +20,7 @@
     Natural-person ownership is therefore representable from a public registry under P1–P3 (this
     Wikidata slice happens to be all legal entities). What stays unrepresentable is covert/
     inferred ownership, asymmetric watch-lists, and monetized resale of the records."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.datom-emit :as de]
             #?(:clj [clojure.java.io :as io])))
 

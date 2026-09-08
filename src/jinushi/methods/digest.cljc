@@ -6,7 +6,7 @@
   (GLEIF), and the per-jurisdiction public-record gate — into a single answer to the standing
   question 「今の root の全世界の不動産の取得 coverage は?」. Read-only synthesis of committed,
   content-addressed artifacts (no network); every number is a read-time aggregate (G2)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.analyze :as analyze]
             [jinushi.methods.ingest :as ingest]
             [jinushi.methods.buildings :as buildings]

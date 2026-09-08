@@ -6,7 +6,7 @@
   snapshot drifted from its recorded identity (tamper, partial edit, or a stale provenance) — the
   content-addressing of R1 is only as good as a check that actually runs it. CI-runnable; exits
   non-zero on any mismatch."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.cid :as cid]
             #?(:clj [clojure.java.io :as io])
             [json.compat :as json]))

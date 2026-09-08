@@ -9,7 +9,7 @@
 
   Read-only composition of committed, content-addressed snapshots (no network); the unified log is
   itself content-addressed (CIDv1) — the whole 不動産取得 as first-class canonical state."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.analyze :as analyze]
             [jinushi.methods.ingest :as ingest]
             [jinushi.methods.datom-emit :as land]

@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-analyze
   "jinushi 地主 — acquisition/normalization engine tests."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.analyze :as a]))
 

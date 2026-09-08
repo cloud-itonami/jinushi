@@ -5,7 +5,7 @@
   commune, the apartment median €/m² + transaction volume for each year and the year-over-year
   delta — the value-side of the diff (差分) the append-only Datom log records. Reuses
   dvf-values/analyze*; pure over {year → lines}. No owner identity (DVF), aggregate-only (G2)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.dvf-values :as dvf]
             #?(:clj [clojure.java.io :as io])))
 

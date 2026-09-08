@@ -17,7 +17,7 @@
 
   Owner legal-entity vs natural-person is a heuristic over the free-text PLUTO ownername (no LEI/
   QID in PLUTO); the heuristic is disclosed, not asserted as fact (G2)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [json.compat :as json]
             [jinushi.methods.analyze :as analyze]
             #?(:clj [clojure.java.io :as io])))
@@ -32,8 +32,8 @@
   prudence — names live only in the local raw)."
   [owner-name org?]
   (if org?
-    (str "org." (-> owner-name str/lower-case (str/replace #"[^a-z0-9]+" "-") (str/replace #"^-|-$" "")))
-    (str "np." (subs (analyze/sha256-hex (str/lower-case (str/trim (or owner-name "")))) 0 12))))
+    (str "org." (-> owner-name str/lower (str/replace #"[^a-z0-9]+" "-") (str/replace #"^-|-$" "")))
+    (str "np." (subs (analyze/sha256-hex (str/lower (str/trim (or owner-name "")))) 0 12))))
 
 (defn normalize
   "Pure: PLUTO rows (parsed Socrata JSON maps) → parcel-ownership records (no names for persons)."

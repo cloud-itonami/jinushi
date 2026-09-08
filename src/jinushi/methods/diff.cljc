@@ -6,7 +6,7 @@
   This computes added / removed / changed records between an OLD and a NEW snapshot keyed on the
   record's natural id — the as-of delta that feeds the append-only kotoba Datom log (Wellbecoming
   = trajectory, not snapshot). Pure + content-addressable; the diff itself is provenance."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn index-by
   "Index records by key-fn, skipping any record whose key is nil (a record missing the key would

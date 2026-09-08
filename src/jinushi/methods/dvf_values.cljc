@@ -9,7 +9,7 @@
   Confidence tier :dvf = authoritative-gov (DGFiP). G1: no owner, no person; street address DROPPED
   (commune + official id_parcelle only — value-intel needs neither). Aggregate-first (G2): medians
   per property type, not a per-parcel valuation product."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])))
 
 ;; column indices in geo-dvf CSV (verified): id_mutation 1, date 2, nature 4, valeur_fonciere 5,
