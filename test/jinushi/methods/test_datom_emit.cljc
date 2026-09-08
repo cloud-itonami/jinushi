@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-datom-emit
   "jinushi 地主 — Datom-emit tests (canonical EAVT, ADR-2605312345)."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.analyze :as a]
             [jinushi.methods.datom-emit :as d]))

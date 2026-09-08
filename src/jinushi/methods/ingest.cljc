@@ -20,7 +20,7 @@
       m²); rows with an unresolved unit are dropped and the count disclosed, never guessed.
     - National parks / nature reserves are PUBLIC land → G1-safe (public owners, no persons, no
       coordinates; only country + area + a per-source per-country public-owner bucket)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.analyze :as analyze]
             #?(:clj [clojure.java.io :as io])))
 

@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-osm-buildings
   "jinushi 地主 — OSM building-stock source tests (open-crowd tier)."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.osm-buildings :as o]
             [jinushi.methods.confidence :as c]))

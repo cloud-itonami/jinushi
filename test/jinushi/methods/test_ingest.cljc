@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-ingest
   "jinushi 地主 — multi-source real-snapshot ingest tests (offline; reads COMMITTED snapshots)."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.analyze :as a]
             [jinushi.methods.ingest :as ing]))

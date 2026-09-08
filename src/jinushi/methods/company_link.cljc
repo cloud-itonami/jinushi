@@ -10,7 +10,7 @@
   Legal persons only (GLEIF registers legal entities, never natural persons) — so the authoritative
   company layer is corporate by construction; natural-person owners (public-record, per the
   jurisdiction gate) carry no LEI and simply have no GLEIF row."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.buildings :as buildings]
             [jinushi.methods.datom-emit :as de]
             #?(:clj [clojure.java.io :as io])))

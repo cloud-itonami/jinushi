@@ -9,7 +9,7 @@
   G1 — a coverage MAP, never a target list: the worklist names COUNTRIES (jurisdictions) to
     pursue registry data from, never parcels/persons to seize. G2 — non-adjudicating: every
     number is a read-time aggregate of disclosed records."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.analyze :as analyze]
             #?(:clj [clojure.java.io :as io])))
 

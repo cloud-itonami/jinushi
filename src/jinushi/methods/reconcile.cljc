@@ -10,13 +10,13 @@
 
   This is what makes 'ingest from all sources' more than a pile of snapshots: a trust-weighted
   single view, recomputed on read, diff-able across ingests (diff.cljc)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.confidence :as c]
             [jinushi.methods.buildings :as buildings]
             [jinushi.methods.company-link :as company]
             #?(:clj [clojure.java.io :as io])))
 
-(defn- norm [s] (-> (or s "") str/lower-case (str/replace #"[^\p{Alnum}]+" "")))
+(defn- norm [s] (-> (or s "") str/lower (str/replace #"[^\p{Alnum}]+" "")))
 
 (defn reconcile-owners
   "Join building owners (Wikidata) ↔ GLEIF on LEI; resolve the owner name by source trust.

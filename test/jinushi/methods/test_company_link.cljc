@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-company-link
   "jinushi 地主 — authoritative GLEIF company-linkage tests."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.buildings :as b]
             [jinushi.methods.company-link :as cl]))

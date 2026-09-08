@@ -13,7 +13,7 @@
   The CID machinery now delegates to the shared **com-junkawasaki/multiformats-clj** library
   (`.cljc`, byte-identical to the prior local copy + to `ipfs add --raw-leaves`). The public
   surface (sha256-bytes / base32-nopad / cidv1-raw / string->cidv1 / file->cidv1) is unchanged."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [multiformats.core :as mf]
             #?(:clj [clojure.java.io :as io])))
 

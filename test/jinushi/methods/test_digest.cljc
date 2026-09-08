@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-digest
   "jinushi 地主 — capstone cross-layer digest tests."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.digest :as d]))
 

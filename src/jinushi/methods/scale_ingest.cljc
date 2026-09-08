@@ -14,7 +14,7 @@
 
   Operator-run (the bulk file is downloaded once by the operator via PRODUCTION.md, never by the
   loop — 負担をかけない): this is the pipeline, not a fetch."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.nyc-pluto :as pluto]
             #?(:clj [clojure.java.io :as io])))
 

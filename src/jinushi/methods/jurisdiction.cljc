@@ -10,7 +10,7 @@
 
   This is a CONSERVATIVE, source-cited registry of well-known regimes; everything else is :unknown.
   It judges ACCESS REGIME, not any individual — it is not itself a person record."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])))
 
 ;; :access ∈ {:public :restricted :unknown}     — is the register open to the public by law?

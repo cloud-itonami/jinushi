@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-cid
   "jinushi 地主 — CIDv1 content-addressing tests (R1)."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.cid :as cid]))
 

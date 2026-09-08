@@ -27,7 +27,7 @@
 
   Clojure-native actor (no Python twin): real keywords + clojure.edn. File I/O only at the
   #?(:clj) edge; the analysis core is pure + portable .cljc."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             #?(:clj [clojure.java.io :as io])))
 
@@ -77,7 +77,7 @@
   "Lower-cased, punctuation-folded, suffix-canonicalized owner name for dedup. Deterministic;
   the DISPLAY name is preserved separately."
   [name]
-  (let [s (-> (or name "") str/trim str/lower-case
+  (let [s (-> (or name "") str/trim str/lower
               (str/replace #"[，、,]" " ")
               (str/replace #"\s+" " "))
         toks (str/split s #"\s+")
@@ -93,7 +93,7 @@
 (defn record-id
   "Stable parcel record-id = sha256(country|parcel-id|owner-name-norm|source) (design §4)."
   [{:keys [:parcel/country :parcel/id :parcel/source]} owner-name-norm]
-  (sha256-hex (str/join "|" [(str/upper-case (or country "")) id owner-name-norm (or source "")])))
+  (sha256-hex (str/join "|" [(str/upper (or country "")) id owner-name-norm (or source "")])))
 
 ;; ── load ─────────────────────────────────────────────────────────────────────
 (defn parse [edn-text] (edn/read-string edn-text))
@@ -174,7 +174,7 @@
         ;; by-country
         by-country
         (reduce (fn [acc p]
-                  (let [cc (str/upper-case (:parcel/country p))
+                  (let [cc (str/upper (:parcel/country p))
                         a (:parcel/area-m2 p)]
                     (-> acc
                         (update-in [cc :parcels] (fnil inc 0))

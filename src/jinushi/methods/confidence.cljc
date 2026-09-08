@@ -9,7 +9,7 @@
   Trust is about PROVENANCE QUALITY, not about any owner: an authoritative public registry
   (gov cadastre / GLEIF) is more reliable than a curated-crowd KG (Wikidata) which is more
   reliable than open-crowd mapping (OSM) which is more reliable than web extraction."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; source-id → {:tier :score 0..1 :note}
 (def source-trust

@@ -10,7 +10,7 @@
   not in the table, or whose country is not ISO-2, or whose area is ≤ 0 (bad data), is DROPPED
   and counted — never guessed. The WDQS 60 s cap often truncates the stream, so the parser
   salvages every COMPLETE (area, unit, cc) triple and ignores a trailing partial row."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])
             #?(:clj [clojure.pprint :as pp])))
 

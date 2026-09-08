@@ -14,7 +14,7 @@
   G1 — the emitted log carries NO :person/* dimension and NO precise dwelling coordinate:
     natural-person land is an :owner/aggregate bucket; centroids are coarse region centroids.
     Enforced structurally here + asserted by tests (no :person token may appear)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [jinushi.methods.analyze :as analyze]
             #?(:clj [clojure.java.io :as io])))
 

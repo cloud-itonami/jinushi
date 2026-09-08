@@ -1,7 +1,7 @@
 (ns jinushi.methods.test-nyc-pluto
   "jinushi 地主 — NYC PLUTO government-cadastre ingest tests."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [jinushi.methods.nyc-pluto :as p]))
 
