@@ -28,7 +28,7 @@ Reads a kotoba-EDN land record set (`:owners` + `:parcels`) and computes, aggreg
 `「全世界の不動産の取得 coverage は?」` is now a runnable metric, not a guess:
 
 ```
-$ bb --classpath 20-actors -e "(require 'jinushi.methods.coverage 'jinushi.methods.analyze)
+$ kbb --classpath 20-actors -e "(require 'jinushi.methods.coverage 'jinushi.methods.analyze)
     (println (jinushi.methods.coverage/render
       (jinushi.methods.analyze/analyze
         (jinushi.methods.analyze/load-file* \"data/seed/parcels.edn\"))))"
@@ -261,18 +261,18 @@ git into a gitlink, breaking the parent's tests/verify/clone — hence git-commi
 ```bash
 CP=20-actors
 for ns in test-analyze test-datom-emit test-coverage test-ingest test-cid test-emit-real test-normalize-wdqs test-verify; do
-  bb --classpath $CP -e "(require 'clojure.set 'jinushi.methods.$ns) (clojure.test/run-tests 'jinushi.methods.$ns)"
+  kbb --classpath $CP -e "(require 'clojure.set 'jinushi.methods.$ns) (clojure.test/run-tests 'jinushi.methods.$ns)"
 done
 # 100 tests / 388 assertions green
 
-bb --classpath 20-actors -m jinushi.methods.coverage     # synthetic seed → out/coverage.md
-bb --classpath 20-actors -m jinushi.methods.datom-emit   # → out/jinushi-datoms.kotoba.edn
-bb --classpath 20-actors -m jinushi.methods.ingest       # REAL snapshots → live world coverage (offline)
-bb --classpath 20-actors -m jinushi.methods.cid          # CIDv1 of each committed snapshot
-bb --classpath 20-actors -m jinushi.methods.normalize-wdqs # raw *.raw.json → committed snapshots (process)
-bb --classpath 20-actors -m jinushi.methods.emit-real    # REAL acquisition → kotoba Datom log + CID
-bb --classpath 20-actors -m jinushi.methods.digest       # CAPSTONE: whole 不動産取得 picture, one report
-bb --classpath 20-actors -m jinushi.methods.verify       # snapshots ↔ provenance CID/sha256 integrity
+kbb --classpath 20-actors -m jinushi.methods.coverage     # synthetic seed → out/coverage.md
+kbb --classpath 20-actors -m jinushi.methods.datom-emit   # → out/jinushi-datoms.kotoba.edn
+kbb --classpath 20-actors -m jinushi.methods.ingest       # REAL snapshots → live world coverage (offline)
+kbb --classpath 20-actors -m jinushi.methods.cid          # CIDv1 of each committed snapshot
+kbb --classpath 20-actors -m jinushi.methods.normalize-wdqs # raw *.raw.json → committed snapshots (process)
+kbb --classpath 20-actors -m jinushi.methods.emit-real    # REAL acquisition → kotoba Datom log + CID
+kbb --classpath 20-actors -m jinushi.methods.digest       # CAPSTONE: whole 不動産取得 picture, one report
+kbb --classpath 20-actors -m jinushi.methods.verify       # snapshots ↔ provenance CID/sha256 integrity
 
 # operator-only, rare, polite — refresh the snapshot from WDQS (NOT run by the loop):
 methods/fetch_wdqs.sh 400
