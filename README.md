@@ -12,4 +12,4 @@ all runtime namespaces are `jinushi.*`, and `manifest.edn` declares the actor's 
 - JSON interoperability artifacts, if introduced, belong under `wire/`.
 - Go/TinyGo, Python, and shell implementations are deprecated and must not be added.
 
-Run `clojure -M -m jinushi.test-runner` and `bb scripts/audit.cljk`.
+Run `kbb -M -m jinushi.test-runner` and `kbb scripts/audit.cljk`.

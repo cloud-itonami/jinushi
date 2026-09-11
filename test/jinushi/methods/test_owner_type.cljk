@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; jinushi 地主 — tests for the global holder-type concentration lens.
-;; Run:  bb --classpath 20-actors src/jinushi/methods/test_owner_type.cljc
+;; Run:  kbb --classpath 20-actors src/jinushi/methods/test_owner_type.cljc
 (ns jinushi.methods.test-owner-type
   "Tests for owner-type-concentration — the global holder-TYPE breakdown (worldwide acquired land
   area per :owner/type with shares) that surfaces the private-vs-commons split the per-owner HHI
