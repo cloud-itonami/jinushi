@@ -6,7 +6,7 @@
   snapshot drifted from its recorded identity (tamper, partial edit, or a stale provenance) — the
   content-addressing of R1 is only as good as a check that actually runs it. CI-runnable; exits
   non-zero on any mismatch."
-  (:require [kotoba.lang.text :as str]
+  (:require [kotoba.io :as kio] [kotoba.lang.text :as str]
             [jinushi.methods.cid :as cid]
             #?(:clj [clojure.java.io :as io])
             [json.compat :as json]))
@@ -14,7 +14,7 @@
 #?(:clj
    (defn sha256-hex-file [f]
      (let [md (java.security.MessageDigest/getInstance "SHA-256")
-           bs (.digest md (java.nio.file.Files/readAllBytes (.toPath (io/file f))))]
+           bs (.digest md (kio/read-all-bytes (io/file f)))]
        (apply str (map #(format "%02x" (bit-and % 0xff)) bs)))))
 
 #?(:clj
