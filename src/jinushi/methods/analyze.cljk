@@ -27,7 +27,7 @@
 
   Clojure-native actor (no Python twin): real keywords + clojure.edn. File I/O only at the
   #?(:clj) edge; the analysis core is pure + portable .cljc."
-  (:require [kotoba.lang.text :as str]
+  (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             #?(:clj [clojure.java.io :as io])))
 
@@ -68,7 +68,7 @@
   "Lowercase hex SHA-256 of a UTF-8 string."
   [s]
   #?(:clj (let [md (java.security.MessageDigest/getInstance "SHA-256")
-                bs (.digest md (.getBytes ^String s "UTF-8"))]
+                bs (.digest md (kbytes/utf8-bytes ^String s))]
             (apply str (map #(format "%02x" (bit-and % 0xff)) bs)))
      :cljs (throw (ex-info "sha256-hex: :clj only" {}))))
 

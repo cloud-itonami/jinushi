@@ -13,7 +13,7 @@
   The CID machinery now delegates to the shared **com-junkawasaki/multiformats-clj** library
   (`.cljc`, byte-identical to the prior local copy + to `ipfs add --raw-leaves`). The public
   surface (sha256-bytes / base32-nopad / cidv1-raw / string->cidv1 / file->cidv1) is unchanged."
-  (:require [kotoba.lang.text :as str]
+  (:require [kotoba.bytes :as kbytes] [kotoba.io :as kio] [kotoba.lang.text :as str]
             [multiformats.core :as mf]
             #?(:clj [clojure.java.io :as io])))
 
@@ -22,12 +22,12 @@
 (def cidv1-raw    mf/cidv1-raw)     ;; content bytes → "bafkrei…" (raw 0x55 / sha2-256)
 
 (defn string->cidv1 [^String s]
-  #?(:clj (cidv1-raw (.getBytes s "UTF-8")) :cljs (throw (ex-info "cid: :clj only" {}))))
+  #?(:clj (cidv1-raw (kbytes/utf8-bytes s)) :cljs (throw (ex-info "cid: :clj only" {}))))
 
 ;; NB: cidv1-raw of the whole file bytes (single-block, any size) — NOT mf/cid-of-file,
 ;; which caps at 256 KiB; jinushi's raw-CID contract intentionally hashes large
 ;; snapshots too (it never claimed dag-pb/UnixFS parity).
-#?(:clj (defn file->cidv1 [f] (cidv1-raw (java.nio.file.Files/readAllBytes (.toPath (io/file f))))))
+#?(:clj (defn file->cidv1 [f] (cidv1-raw (kio/read-all-bytes (io/file f)))))
 
 #?(:clj
    (defn -main [& argv]
