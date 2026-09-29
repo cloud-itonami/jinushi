@@ -1,6 +1,6 @@
 ;; jinushi — actor manifest (created to declare :substrate.datasets for the
 ;; actor data-ownership model, ADR-2607010001. Owner should enrich the other
-;; fields — cells, gates, lexicons — from CLAUDE.md + kotoba.app.edn metadata.)
+;; fields — cells, gates, lexicons — from AGENTS.md + kotoba.app.edn metadata.)
 {:actor/glyph "地主"
  :actor/display-name "地主 — World Land-Ownership Acquisition Mirror"
  :actor/adr "2606162000"
