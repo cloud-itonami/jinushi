@@ -2,16 +2,28 @@
  :deps {
         ;; kotoba.bytes replaced UTF-8 .getBytes / String. here (2026-09-24). An explicit
         ;; floor: tools.deps takes the NEWEST sha it is shown.
-        io.github.kotoba-lang/bytes {:git/sha "d5259f35ab7c4f5a66e63ca29ed4dcf7ba3f1ac5"}
+        io.github.kotoba-lang/bytes
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "4bf68e1a1b205674c70f386d59e430801fae3572"
+         :deps/root "lib/kotoba.bytes"}
         ;; kotoba.io replaced java.nio.file.Files here (2026-09-24). An explicit
         ;; floor: temp-dir temp-file read-all-bytes write-bytes write-string
         ;; delete-if-exists are in kotoba.io from this sha, and tools.deps takes
         ;; the NEWEST sha it is shown.
-        io.github.kotoba-lang/io {:git/sha "72dde04b4c32854d70d17a670b277f8f7957a784"}
+        io.github.kotoba-lang/io
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "4bf68e1a1b205674c70f386d59e430801fae3572"
+         :deps/root "lib/kotoba.io"}
         ;; kotoba.lang.text, not clojure.string. Pinned as an explicit floor:
         ;; tools.deps takes the NEWEST sha it is shown, so without a floor here
         ;; this repo silently rides whatever a sibling happens to name.
-        io.github.kotoba-lang/text {:git/sha "73bdb13ae7a3d004b44bca08be03a3191157a38f"}
-       io.github.kotoba-lang/json {:git/sha "4c55a247b020bfb1c7b5b09f9df8f3fa5601a207"}        com-junkawasaki/multiformats-clj
+        io.github.kotoba-lang/text
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "4bf68e1a1b205674c70f386d59e430801fae3572"
+         :deps/root "lib/kotoba.text"}
+       io.github.kotoba-lang/json
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "4bf68e1a1b205674c70f386d59e430801fae3572"
+         :deps/root "lib/kotoba.json"}        com-junkawasaki/multiformats-clj
         {:git/url "https://github.com/com-junkawasaki/multiformats-clj"
          :git/sha "310724803db65840f00d2d98d7887f2b6a512bd3"}}}
